@@ -1,7 +1,11 @@
-trigger: none  # No automatic trigger, run manually
+trigger: none
 
-pool:
-  vmImage: 'ado2ghe'  # You can use windows-latest if needed
+pool: ado2ghe
 
 steps:
-  - script: echo "Hello World"
+  - script: |
+      echo "This script will run forever for testing purposes."
+      while true; do
+        sleep 60
+      done
+    displayName: "Infinite Loop Bash Script"
